@@ -1,0 +1,124 @@
+{
+	"variables": [],
+	"info": {
+		"name": "nginx_management",
+		"_postman_id": "019b21d7-1875-3cbe-23c1-d183813b3dd8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Customers",
+			"request": {
+				"url": "http://localhost:3000/nginx/customers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get all customers"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/nginx/customer?customer_id=Debasish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"nginx",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "customer_id",
+							"value": "Debasish",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get a customer"
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Customer",
+			"request": {
+				"url": "http://localhost:3000/nginx/customer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customer_id\": \"Avinash\",\n\t\"zone\": 12,\n\t\"rate\": 32.563,\n\t\"burst\": 657,\n\t\"external_ip\": \"58.14.62.1\",\n\t\"external_port\": 7011\n\n\n}"
+				},
+				"description": "Create a new nginx customer"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a customer",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/nginx/customer?customer_id=Rajesh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"nginx",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "customer_id",
+							"value": "Rajesh",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Delete a nginx customer"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Customer",
+			"request": {
+				"url": "http://localhost:3000/nginx/customer",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customer_id\": \"Rajesh\",\n\t\"zone\": 4,\n\t\"rate\": 15,\n\t\"burst\": 45,\n\t\"external_ip\": \"32.14.62.103\",\n\t\"external_port\": 8002\n\n\n}"
+				},
+				"description": "Update Customer"
+			},
+			"response": []
+		}
+	]
+}
